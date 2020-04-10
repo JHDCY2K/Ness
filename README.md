@@ -19,3 +19,7 @@ alterar o arquivo appsettings.json conforme abaixo
     "DefaultConnection": "Server=localhost\\SQLEXPRESS;Database=NESS;Trusted_Connection=True;MultipleActiveResultSets=true;"
   }
 }
+
+
+Para loguin utilizar : admin - senha 123
+
