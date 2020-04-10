@@ -1,0 +1,62 @@
+﻿@model Ness.ExemploWeb.Dtos.ClienteModel
+
+@{
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<section id="inner-headline">
+    <div class="container">
+        <div class="row">
+            <div class="span4">
+                <div class="inner-heading">
+                    <h2>Destalhes</h2>
+                </div>
+            </div>
+            <div class="span8">
+                <ul class="breadcrumb">
+                    <li><a asp-controller="Home" asp-action="Index"><i class="icon-home"></i></a><i class="icon-angle-right"></i></li>
+                    <li class="active">Detalhes</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+</section>
+<section id="content">
+    <div class="container">
+        <div class="row">
+            <div class="span12">
+                <h4>Detalhes do <strong>Paciente</strong></h4>
+                <hr />
+                <div class="row">
+                    <div class="col-md-4 span12">
+                        <dl class="dl-horizontal" style="font-size: 18px">
+                            <dt>
+                                @Html.DisplayNameFor(model => model.Nome)
+                            </dt>
+                            <dd>
+                                @Html.DisplayFor(model => model.Nome)
+                            </dd>
+                            <dt>
+                                @Html.DisplayNameFor(model => model.Endereco)
+                            </dt>
+                            <dd>
+                                @Html.DisplayFor(model => model.Endereco)
+                            </dd>
+                            <dt>
+                                @Html.DisplayNameFor(model => model.CPF)
+                            </dt>
+                            <dd>
+                                @Html.DisplayFor(model => model.CPF)
+                            </dd>
+                        </dl>
+
+                        <div style="font-size: 15px">
+                            <a asp-action="Edit" asp-route-id="@Model.Id">Editar</a> |
+                            <a asp-action="Index">Voltar para a lista</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>

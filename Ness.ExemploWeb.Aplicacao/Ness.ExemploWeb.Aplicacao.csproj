@@ -1,0 +1,12 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <ItemGroup>
+    <ProjectReference Include="..\Ness.ExemploWeb.Dados\Ness.ExemploWeb.Dados.csproj" />
+    <ProjectReference Include="..\Ness.ExemploWeb.Dominio\Ness.ExemploWeb.Dominio.csproj" />
+  </ItemGroup>
+
+  <PropertyGroup>
+    <TargetFramework>netstandard2.0</TargetFramework>
+  </PropertyGroup>
+
+</Project>

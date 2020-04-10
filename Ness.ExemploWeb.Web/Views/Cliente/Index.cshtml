@@ -1,0 +1,76 @@
+﻿@model IEnumerable<Ness.ExemploWeb.Dtos.ClienteModel>
+
+@{
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<section id="inner-headline">
+    <div class="container">
+        <div class="row">
+            <div class="span4">
+                <div class="inner-heading">
+                    <h2>Lista de Pacientes</h2>
+                </div>
+            </div>
+            <div class="span8">
+                <ul class="breadcrumb">
+                    <li><a asp-controller="Home" asp-action="Index"><i class="icon-home"></i></a><i class="icon-angle-right"></i></li>
+                    <li class="active">Lista de Pacientes</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+</section>
+<section id="content">
+    <div class="container aligncenter">
+        <div class="row">
+            <div class="span12">
+                <div class="row">
+                    <table class="table">
+                        <thead>
+                            <tr>
+                                <th>
+                                    @Html.DisplayNameFor(model => model.Nome)
+                                </th>
+                                <th>
+                                    @Html.DisplayNameFor(model => model.Endereco)
+                                </th>
+                                <th>
+                                    @Html.DisplayNameFor(model => model.CPF)
+                                </th>
+                                <th></th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            @foreach (var item in Model)
+                            {
+                                <tr>
+                                    <td>
+                                        @Html.DisplayFor(modelItem => item.Nome)
+                                    </td>
+                                    <td>
+                                        @Html.DisplayFor(modelItem => item.Endereco)
+                                    </td>
+                                    <td>
+                                        @Html.DisplayFor(modelItem => item.CPF)
+                                    </td>
+
+                                    <td>
+                                        <a asp-action="Edit" asp-route-id="@item.Id">Editar</a> |
+                                        <a asp-action="Details" asp-route-id="@item.Id">Detalhes</a> |
+                                        <a asp-action="Delete" asp-route-id="@item.Id">Excluir</a> |
+                                        <a asp-action="Agenda" asp-route-id="@item.Id">Agendar</a>
+                                    </td>
+                                </tr>
+                            }
+                        </tbody>
+                    </table>
+                    <div style="text-align:left">
+                        <a asp-action="Create">+ Novo Paciente</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+

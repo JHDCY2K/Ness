@@ -1,0 +1,68 @@
+﻿@model Ness.ExemploWeb.Dtos.ClienteModel
+
+@{
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<section id="inner-headline">
+    <div class="container">
+        <div class="row">
+            <div class="span4">
+                <div class="inner-heading">
+                    <h2>Adicionar Paciente</h2>
+                </div>
+            </div>
+            <div class="span8">
+                <ul class="breadcrumb">
+                    <li><a asp-controller="Home" asp-action="Index"><i class="icon-home"></i></a><i class="icon-angle-right"></i></li>
+                    <li class="active">Criar</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+</section>
+<section id="content">
+    <div class="container">
+        <div class="row">
+            <div class="span12">
+                <div class="row">
+                    <div class="col-md-4 span12">
+                        <div class="row">
+                            
+                                <form asp-action="Create">
+                                    <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+                                    <div class="form-group">
+                                        <label asp-for="Nome" class="control-label"></label>
+                                        <input asp-for="Nome" class="form-control" />
+                                        <span asp-validation-for="Nome" class="text-danger"></span>
+                                    </div>
+                                    <div class="form-group">
+                                        <label asp-for="Endereco" class="control-label"></label>
+                                        <input asp-for="Endereco" class="form-control" />
+                                        <span asp-validation-for="Endereco" class="text-danger"></span>
+                                    </div>
+                                    <div class="form-group">
+                                        <label asp-for="CPF" class="control-label"></label>
+                                        <input asp-for="CPF" class="form-control" />
+                                        <span asp-validation-for="CPF" class="text-danger"></span>
+                                    </div>
+                                    <div class="form-group">
+                                        <input type="submit" value="Criar" class="btn btn-default" />
+                                    </div>
+                                </form>
+                        
+                        </div>
+                    </div>
+                    <div style="font-size: 15px">
+                        <a asp-action="Index">Voltar para a Lista</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}

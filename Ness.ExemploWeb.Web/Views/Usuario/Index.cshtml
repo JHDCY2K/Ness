@@ -1,0 +1,81 @@
+﻿@model IEnumerable<Ness.ExemploWeb.Dtos.UsuarioModel>
+
+@{
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<div class="row">
+    <div class="col-md-12">
+        <table class="table">
+            <thead>
+                <tr>
+                    <th>
+                        @Html.DisplayNameFor(model => model.Nome)
+                    </th>
+                    <th>
+                        @Html.DisplayNameFor(model => model.Login)
+                    </th>
+                    <th>
+                        @Html.DisplayNameFor(model => model.Ativo)
+                    </th>
+                    <th>
+                        @Html.DisplayNameFor(model => model.UltimoLogin)
+                    </th>
+                    <th>
+                        @Html.DisplayNameFor(model => model.CriadoPor)
+                    </th>
+                    <th>
+                        @Html.DisplayNameFor(model => model.DataCriacao)
+                    </th>
+                    <th>
+                        @Html.DisplayNameFor(model => model.AlteradoPor)
+                    </th>
+                    <th>
+                        @Html.DisplayNameFor(model => model.DataAlteracao)
+                    </th>
+                    <th></th>
+                </tr>
+            </thead>
+            <tbody>
+                @foreach (var item in Model)
+                {
+                    <tr>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.Nome)
+                        </td>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.Login)
+                        </td>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.Ativo)
+                        </td>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.UltimoLogin)
+                        </td>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.CriadoPor)
+                        </td>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.DataCriacao)
+                        </td>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.AlteradoPor)
+                        </td>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.DataAlteracao)
+                        </td>
+                        <td>
+                            <a asp-action="Edit" asp-route-id="@item.Id">Edit</a> |
+                            <a asp-action="Details" asp-route-id="@item.Id">Details</a> |
+                            <a asp-action="Delete" asp-route-id="@item.Id">Delete</a>
+                        </td>
+                    </tr>
+                }
+            </tbody>
+        </table>
+    </div>
+</div>
+
+<div>
+    <a asp-action="Create">New</a>
+</div>

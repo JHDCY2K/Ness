@@ -1,0 +1,64 @@
+﻿@model Ness.ExemploWeb.Dtos.UsuarioModel
+
+@{
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<div>
+    <h4>Usuario</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.Nome)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.Nome)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.Login)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.Login)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.Ativo)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.Ativo)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.UltimoLogin)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.UltimoLogin)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.CriadoPor)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.CriadoPor)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.DataCriacao)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.DataCriacao)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.AlteradoPor)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.AlteradoPor)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.DataAlteracao)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.DataAlteracao)
+        </dd>
+    </dl>
+</div>
+<div>
+    <a asp-action="Edit" asp-route-id="@Model.Id">Edit</a> |
+    <a asp-action="Index">Back to List</a>
+</div>

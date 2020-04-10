@@ -1,0 +1,57 @@
+﻿@model Ness.ExemploWeb.Dtos.ClienteModel
+
+@{
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<section id="inner-headline">
+    <div class="container">
+        <div class="row">
+            <div class="span4">
+                <div class="inner-heading">
+                    <h2>Excluir Paciente</h2>
+                </div>
+            </div>
+            <div class="span8">
+                <ul class="breadcrumb">
+                    <li><a asp-controller="Home" asp-action="Index"><i class="icon-home"></i></a><i class="icon-angle-right"></i></li>
+                    <li class="active">Excluir</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+</section>
+<section id="content">
+    <div class="container">
+        <div class="row">
+            <div class="span12">
+                <h4>Você tem certeza que deseja excluir este <strong>cliente?</strong></h4>
+                <hr />
+                <div class="row">
+                    <div class="col-md-4 span12">
+                        <dl class="dl-horizontal">
+                            <dt style="font-size: 18px">
+                                @Html.DisplayNameFor(model => model.Nome)
+                            </dt>
+                            <dd style="font-size: 18px">
+                                @Html.DisplayFor(model => model.Nome)
+                            </dd>
+                            <dt style="font-size: 18px">
+                                @Html.DisplayNameFor(model => model.CPF)
+                            </dt>
+                            <dd style="font-size: 18px">
+                                @Html.DisplayFor(model => model.CPF)
+                            </dd>
+                        </dl>
+
+                        <form asp-action="Delete" style="padding-left:50px">
+                            <input type="hidden" asp-for="Id" />
+                            <input type="submit" value="EXCLUIR" class="btn btn-danger" /> |
+                            <a asp-action="Index" style="font-size: 15px">Voltar para a lista</a>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>

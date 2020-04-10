@@ -1,0 +1,43 @@
+﻿@model Ness.ExemploWeb.Dtos.LoginModel
+@{
+    ViewBag.Title = "Log in";
+}
+
+<h2>@ViewBag.Title.</h2>
+<div class="row">
+    <div class="col-md-8">
+        <section id="loginForm">
+            @using (Html.BeginForm("Login", "Autenticacao", new { ReturnUrl = ViewBag.ReturnUrl }, FormMethod.Post, true, new { @class = "form-horizontal", role = "form" }))
+            {
+
+                <h4>Informe o seu login</h4>
+                <hr />
+                @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+                <div class="form-group">
+                    @Html.LabelFor(m => m.Login, new { @class = "col-md-2 control-label" })
+                    <div class="col-md-10">
+                        @Html.TextBoxFor(m => m.Login, new { @class = "form-control" })
+                        @Html.ValidationMessageFor(m => m.Login, "", new { @class = "text-danger" })
+                    </div>
+                </div>
+                <div class="form-group">
+                    @Html.LabelFor(m => m.Senha, new { @class = "col-md-2 control-label" })
+                    <div class="col-md-10">
+                        @Html.PasswordFor(m => m.Senha, new { @class = "form-control" })
+                        @Html.ValidationMessageFor(m => m.Senha, "", new { @class = "text-danger" })
+                    </div>
+                </div>
+                <div class="form-group">
+                    <div class="col-md-offset-2 col-md-10">
+                        <input type="submit" value="Log in" class="btn btn-default" />
+                    </div>
+                </div>
+            }
+        </section>
+    </div>
+</div>
+
+@section scripts {
+    <script src="https://ajax.aspnetcdn.com/ajax/jquery.validate/1.16.0/jquery.validate.min.js"></script>
+    <script src="https://ajax.aspnetcdn.com/ajax/jquery.validation.unobtrusive/3.2.6/jquery.validate.unobtrusive.min.js"></script>
+}
